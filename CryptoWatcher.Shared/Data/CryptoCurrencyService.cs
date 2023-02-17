@@ -22,7 +22,7 @@ namespace CryptoWatcher.Shared.Data
     {
         private readonly HttpClient _httpClient;
         public CryptoCurrencyService(HttpClient httpClient) => _httpClient = httpClient;
-        public async Task<List<Asset>> GetCurrencies()
+        public async Task<List<Asset>> GetCurrenciesAsync()
         {
             HttpResponseMessage response;
             try
@@ -38,7 +38,7 @@ namespace CryptoWatcher.Shared.Data
             catch (Exception ex) {  }
             return null;
         }
-        public async Task<Asset> GetCurrency(string currencyId)
+        public async Task<Asset> GetCurrencyAsync(string currencyId)
         {
             //await _httpClient.GetFromJsonAsync<Asset>($"assets/{currencyId}");
             HttpResponseMessage response;

@@ -5,7 +5,7 @@
     /// </summary>
     internal interface ICryptoCurrencyService<T>
     {
-        public Task<List<T>> GetCurrencies();
-        public Task<T> GetCurrency(string currencyId);
+        public Task<List<T>> GetCurrenciesAsync();
+        public Task<T> GetCurrencyAsync(string currencyId);
     }
 }
