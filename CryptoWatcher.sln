@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoWatcher", "CryptoWatc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoWatcher.Shared", "CryptoWatcher.Shared\CryptoWatcher.Shared.csproj", "{6159847B-6B6F-4BFA-BB6C-E3E192A60B5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoWathcer.WpfUi.Cleint", "CryptoWathcer.Wpf-Ui.Cleint\CryptoWathcer.WpfUi.Cleint.csproj", "{64EFBE4C-FED1-45AD-A1A7-6CD475D62764}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6159847B-6B6F-4BFA-BB6C-E3E192A60B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6159847B-6B6F-4BFA-BB6C-E3E192A60B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6159847B-6B6F-4BFA-BB6C-E3E192A60B5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64EFBE4C-FED1-45AD-A1A7-6CD475D62764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64EFBE4C-FED1-45AD-A1A7-6CD475D62764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64EFBE4C-FED1-45AD-A1A7-6CD475D62764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64EFBE4C-FED1-45AD-A1A7-6CD475D62764}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
