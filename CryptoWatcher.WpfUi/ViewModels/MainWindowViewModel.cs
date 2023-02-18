@@ -49,6 +49,13 @@ namespace CryptoWatcher.WpfUi.ViewModels
                     PageTag = "data",
                     Icon = SymbolRegular.DataHistogram24,
                     PageType = typeof(Views.Pages.DataPage)
+                },
+                new NavigationItem()
+                {
+                    Content = "Currencies",
+                    PageTag = "currencies",
+                    Icon = SymbolRegular.ArrowTrending24,
+                    PageType = typeof(Views.Pages.CurrenciesPage)
                 }
             };
 

@@ -56,12 +56,15 @@ namespace CryptoWatcher.WpfUi
                 services.AddScoped<ViewModels.DataViewModel>();
                 services.AddScoped<Views.Pages.SettingsPage>();
                 services.AddScoped<ViewModels.SettingsViewModel>();
+
+                // Currencies and details page
                 services.AddScoped<Views.Pages.CurrenciesPage>();
                 services.AddScoped<ViewModels.CurrenciesViewModel>();
+                
                 //services.AddScoped<Views.Pages.CurrencyPage>();
                 //services.AddScoped<ViewModels.CurrencyViewModel>();
 
-                //http
+                // http
                 services.AddScoped<CryptoCurrencyService>();
 
                 services.AddScoped(sp =>
