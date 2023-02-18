@@ -5,4 +5,4 @@ Design is very human, easy to use
 Light and dark theme support
 EN and UK languages
 
-<img src="~/Chart.png" widht="270" height="585"/>
+<img src="Chart.png" widht="270" height="585"/>
