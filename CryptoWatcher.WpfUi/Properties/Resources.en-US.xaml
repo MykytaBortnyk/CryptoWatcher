@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="m_About">About</system:String>
+    <system:String x:Key="m_cId">Currency Id</system:String>
+    <system:String x:Key="m_Currencies">Currencies</system:String>
+    <system:String x:Key="m_DarkTheme">Dark</system:String>
+    <system:String x:Key="m_Dashboard">Home</system:String>
+    <system:String x:Key="m_Data">Data</system:String>
+    <system:String x:Key="m_Details">Details</system:String>
+    <system:String x:Key="m_LangSwitch">Language</system:String>
+    <system:String x:Key="m_LightTheme">Light</system:String>
+    <system:String x:Key="m_Personalisation">Personalisation</system:String>
+    <system:String x:Key="m_Price">USD price</system:String>
+    <system:String x:Key="m_Rank">Rank</system:String>
+    <system:String x:Key="m_Settings">Settings</system:String>
+    <system:String x:Key="m_Symbol">Symbolic name</system:String>
+    <system:String x:Key="m_Theme">Personalisation</system:String>
+    <system:String x:Key="m_Title">Crypto watсher</system:String>
+    <system:String x:Key="m_MaxSupply">Max Supply</system:String>
+    <system:String x:Key="m_Supply">Supply</system:String>
+    <system:String x:Key="m_Change24h">Value change avg(24h)</system:String>
+    <system:String x:Key="m_Vwap24Hr">Volume Weighted(24h)</system:String>
+    <system:String x:Key="m_MarketCap">Market Cap</system:String>
+    <system:String x:Key="m_Volume">Quantity of trading volume(24h)</system:String>
+    <system:String x:Key="m_Info">Details</system:String>
+</ResourceDictionary>

@@ -1,0 +1,66 @@
+﻿<ui:UiPage x:Class="CryptoWatcher.WpfUi.Views.Pages.CurrencyDetailsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CryptoWatcher.WpfUi.Views.Pages"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      d:DataContext="{d:DesignInstance local:CurrencyDetailsPage}"
+      d:Background="{DynamicResource ApplicationBackgroundBrush}"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      mc:Ignorable="d" 
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      Title="Currency details page">
+
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="12">
+            <TextBlock Text="{Binding ViewModel.CurrentAsset.Name}"
+                       FontSize="24" FontWeight="Bold" Margin="0,0,0,12" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource m_Rank}" FontWeight="Bold" Margin="0,0,12,0" />
+                <TextBlock Text="{Binding ViewModel.CurrentAsset.Rank}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource m_Symbol}" FontWeight="Bold" Margin="0,0,12,0" />
+                <TextBlock Text="{Binding ViewModel.CurrentAsset.Symbol}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource m_Price}" FontWeight="Bold" Margin="0,0,12,0" />
+                <TextBlock Text="{Binding ViewModel.CurrentAsset.PriceUsd}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource m_Supply}" FontWeight="Bold" Margin="0,0,12,0" />
+                <TextBlock Text="{Binding ViewModel.CurrentAsset.Supply}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource m_MaxSupply}" FontWeight="Bold" Margin="0,0,12,0" />
+                <TextBlock Text="{Binding ViewModel.CurrentAsset.MaxSupply}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource m_MarketCap}" FontWeight="Bold" Margin="0,0,12,0" />
+                <TextBlock Text="{Binding ViewModel.CurrentAsset.MarketCapUsd}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource m_Volume}" FontWeight="Bold" Margin="0,0,12,0" />
+                <TextBlock Text="{Binding ViewModel.CurrentAsset.VolumeUsd24Hr}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource m_Change24h}" FontWeight="Bold" Margin="0,0,12,0" />
+                <TextBlock>"{Binding ViewModel.CurrentAsset.ChangePercent24Hr}'%'</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource m_Vwap24Hr}" FontWeight="Bold" Margin="0,0,12,0" />
+                <TextBlock Text="{Binding ViewModel.CurrentAsset.Vwap24Hr}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{DynamicResource m_MarketCap}" FontWeight="Bold" Margin="0,0,12,0" />
+                <TextBlock>           
+                    <Hyperlink NavigateUri="{Binding ViewModel.CurrentAsset.Explorer}">
+                        Buy
+                    </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</ui:UiPage>

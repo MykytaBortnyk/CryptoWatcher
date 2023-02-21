@@ -1,5 +1,4 @@
-﻿using CryptoWatcher.Shared.Data;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Controls.Interfaces;

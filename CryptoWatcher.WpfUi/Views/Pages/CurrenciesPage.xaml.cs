@@ -1,20 +1,9 @@
 ﻿using CryptoWatcher.Shared.Data;
 using CryptoWatcher.WpfUi.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Wpf.Ui.Common.Interfaces;
+using static CryptoWatcher.Shared.Data.CryptoCurrency;
 
 namespace CryptoWatcher.WpfUi.Views.Pages
 {
@@ -23,18 +12,12 @@ namespace CryptoWatcher.WpfUi.Views.Pages
     /// </summary>
     public partial class CurrenciesPage : INavigableView<ViewModels.CurrenciesViewModel>
     {
-        private CryptoCurrencyService _currencyService;
         public CurrenciesViewModel ViewModel { get; }
-        public CurrenciesPage(CryptoCurrencyService currencyService)
+        public CurrenciesPage(ViewModels.CurrenciesViewModel viewModel)
         {
-            InitializeComponent();
-            _currencyService = currencyService;
-            GetCurrencies();
-        }
+            ViewModel = viewModel;
 
-        private async void GetCurrencies()
-        {
-            CurrenciesDg.ItemsSource = await _currencyService.GetCurrenciesAsync();
+            InitializeComponent();
         }
     }
 }

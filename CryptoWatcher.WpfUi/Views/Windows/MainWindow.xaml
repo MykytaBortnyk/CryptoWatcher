@@ -7,10 +7,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pages="clr-namespace:CryptoWatcher.WpfUi.Views.Pages"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
-    xmlns:p="clr-namespace:CryptoWatcher.WpfUi.Properties"
-    Title="{x:Static p:Resources.m_Title}"
+    Title="{DynamicResource m_Title}"
     Width="1100"
     Height="650"
+    MinWidth="800" MinHeight="350"
     d:DataContext="{d:DesignInstance local:MainWindow,
                                      IsDesignTimeCreatable=True}"
     d:Background="{DynamicResource ApplicationBackgroundBrush}"
@@ -43,7 +43,7 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Row="0" Margin="0,12">
-                    <TextBlock FontSize="16" Text="{x:Static p:Resources.m_Title}" />
+                    <TextBlock FontSize="16" Text="{DynamicResource m_Title}" />
                     <TextBlock
                         FontSize="10"
                         Foreground="{DynamicResource TextFillColorTertiaryBrush}"
@@ -53,12 +53,43 @@
                 <ui:AutoSuggestBox Grid.Row="1" Margin="0,0,0,12" />
 
                 <!--  This is the main navigation of the application.  -->
+                <!--  Commented code below works with default nav init -->
+                <!--  Footer="{Binding ViewModel.NavigationFooter, Mode=TwoWay}" -->
+                <!--  Items="{Binding ViewModel.NavigationItems, Mode=TwoWay}" -->
                 <ui:NavigationFluent
                     x:Name="RootNavigation"
                     Grid.Row="2"
-                    Footer="{Binding ViewModel.NavigationFooter, Mode=TwoWay}"
-                    Frame="{Binding ElementName=RootFrame, Mode=OneWay}"
-                    Items="{Binding ViewModel.NavigationItems, Mode=TwoWay}" />
+                    Frame="{Binding ElementName=RootFrame}">
+                    <ui:NavigationFluent.Items>
+                        <ui:NavigationItem
+                            x:Name="DashboardNavItem"
+                            Content="{DynamicResource m_Dashboard}"
+                            PageTag="dashboard"
+                            Icon="Home24"
+                            PageType="{x:Type pages:DashboardPage}"
+                            />
+                        <ui:NavigationItem
+                            Content="{DynamicResource m_Data}"
+                            PageTag="data"
+                            Icon="DataHistogram24"
+                            PageType="{x:Type pages:DataPage}"
+                            />
+                        <ui:NavigationItem
+                            Content="{DynamicResource m_Currencies}"
+                            PageTag="currencies"
+                            Icon="ArrowTrending24"
+                            PageType="{x:Type pages:CurrenciesPage}"
+                            />
+                    </ui:NavigationFluent.Items>
+                    <ui:NavigationFluent.Footer>
+                        <ui:NavigationItem
+                            Content="{DynamicResource m_Settings}"
+                            PageTag="settings"
+                            Icon="Settings24"
+                            PageType="{x:Type pages:SettingsPage}"
+                            />
+                    </ui:NavigationFluent.Footer>
+                </ui:NavigationFluent>
             </Grid>
 
             <!--  We display our pages inside this element.  -->
@@ -99,7 +130,7 @@
                     TooltipText="CryptoWatcher.WpfUi">
                     <ui:NotifyIcon.Menu>
                         <ContextMenu>
-                            <MenuItem Header="Home" Tag="home" />
+                            <MenuItem Header="{DynamicResource m_Dashboard}" Tag="home" />
                         </ContextMenu>
                     </ui:NotifyIcon.Menu>
                 </ui:NotifyIcon>

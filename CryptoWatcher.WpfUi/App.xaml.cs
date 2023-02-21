@@ -1,14 +1,25 @@
 ﻿using CryptoWatcher.Shared.Data;
 using CryptoWatcher.WpfUi.Models;
 using CryptoWatcher.WpfUi.Services;
+using CryptoWatcher.WpfUi.Views.Windows;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Localization;
+using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Net.Http;
 using System.Reflection;
+using System.Resources;
+using System.Threading;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Threading;
 using Wpf.Ui.Mvvm.Contracts;
 using Wpf.Ui.Mvvm.Services;
@@ -60,9 +71,9 @@ namespace CryptoWatcher.WpfUi
                 // Currencies and details page
                 services.AddScoped<Views.Pages.CurrenciesPage>();
                 services.AddScoped<ViewModels.CurrenciesViewModel>();
-                
-                //services.AddScoped<Views.Pages.CurrencyPage>();
-                //services.AddScoped<ViewModels.CurrencyViewModel>();
+
+                services.AddScoped<Views.Pages.CurrencyDetailsPage>();
+                services.AddScoped<ViewModels.CurrencyDetailsViewModel>();
 
                 // http
                 services.AddScoped<CryptoCurrencyService>();
