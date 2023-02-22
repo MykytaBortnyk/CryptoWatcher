@@ -6,6 +6,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:pages="clr-namespace:CryptoWatcher.WpfUi.Views.Pages"
       Title="CurrenciesPage"
       d:DataContext="{d:DesignInstance local:CurrenciesPage}"
       d:DesignHeight="450"
@@ -13,36 +14,40 @@
       d:Background="{DynamicResource ApplicationBackgroundBrush}"
       Foreground="{DynamicResource TextFillColorPrimaryBrush}"
       mc:Ignorable="d">
-    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
-            <ui:VirtualizingItemsControl
+    <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
+        <ui:VirtualizingItemsControl
             Foreground="{DynamicResource TextFillColorSecondaryBrush}" 
             VirtualizingPanel.CacheLengthUnit="Item">
-                <ui:DataGrid Name="CurrenciesDg"
-                      AutoGenerateColumns="False"
-                      IsReadOnly="True" 
-                      CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"
-                      CanUserResizeColumns="False"
-                      EnableRowVirtualization="false" EnableColumnVirtualization="false"
-                      HorizontalAlignment="Left" VerticalAlignment="Top"
-                      Margin="0,12,0,0"
-                      ColumnWidth="*"
-                      Width="Auto"
-                      MinWidth="475" MaxWidth="700"
-                      ItemsSource="{Binding ViewModel.Assets, Mode=OneWay}">
+                <ui:DataGrid x:Name="CurrenciesDg"
+                         CanUserResizeRows="False"
+                         AutoGenerateColumns="False"
+                         IsReadOnly="True" 
+                         CanUserResizeColumns="False"  CanUserReorderColumns="false"
+                         Margin="0,12,0,0"
+                         Height="500"
+                         MinWidth="475" MaxWidth="700"
+                         HeadersVisibility="Column"
+                         ItemsSource="{Binding ViewModel.Assets, Mode=OneWay}">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Width="Auto" Header="{DynamicResource m_cId}" Binding="{Binding Name}"/>
-                        <DataGridTextColumn Width="Auto" Header="{DynamicResource m_Rank}" Binding="{Binding Rank}" />
-                        <DataGridTextColumn Width="Auto" Header="{DynamicResource m_Symbol}" Binding="{Binding Symbol}"/>
-                        <DataGridTextColumn Width="Auto" Header="{DynamicResource m_Price}" Binding="{Binding PriceUsd}"/>
+                        <DataGridTextColumn Width="*" Header="{DynamicResource m_Name}" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Width="*" Header="{DynamicResource m_Rank}" Binding="{Binding Rank}" />
+                        <DataGridTextColumn Width="*" Header="{DynamicResource m_Symbol}" Binding="{Binding Symbol}"/>
+                        <DataGridTextColumn Width="*" Header="{DynamicResource m_Price}" Binding="{Binding PriceUsd}"/>
                     </DataGrid.Columns>
+                <!--<ui:DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="{DynamicResource m_Info}" 
+                                  Command="{Binding ViewModel.ShowDetailsCommand}"
+                                  CommandParameter="{Binding ContextMenu.PlacementTarget}"
+                                  />
+                    </ContextMenu>
+                </ui:DataGrid.ContextMenu>-->
                     <DataGrid.InputBindings>
                         <MouseBinding Gesture="LeftDoubleClick"
                                   Command="{Binding ViewModel.ShowDetailsCommand}"
                                   CommandParameter="{Binding ElementName=CurrenciesDg, Path=SelectedItem}"/>
                     </DataGrid.InputBindings>
                 </ui:DataGrid>
-            </ui:VirtualizingItemsControl>
-        </StackPanel>
-    </ScrollViewer>
+        </ui:VirtualizingItemsControl>
+    </StackPanel>
 </ui:UiPage>

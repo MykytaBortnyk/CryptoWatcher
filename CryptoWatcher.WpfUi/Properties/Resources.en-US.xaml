@@ -4,6 +4,7 @@
     <system:String x:Key="m_About">About</system:String>
     <system:String x:Key="m_cId">Currency Id</system:String>
     <system:String x:Key="m_Currencies">Currencies</system:String>
+    <system:String x:Key="m_Name">Name</system:String>
     <system:String x:Key="m_DarkTheme">Dark</system:String>
     <system:String x:Key="m_Dashboard">Home</system:String>
     <system:String x:Key="m_Data">Data</system:String>

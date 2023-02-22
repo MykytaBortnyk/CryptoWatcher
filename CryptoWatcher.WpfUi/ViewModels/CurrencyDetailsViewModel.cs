@@ -14,16 +14,20 @@ namespace CryptoWatcher.WpfUi.ViewModels
         private bool _isInitialized = false;
 
         [ObservableProperty]
-        private Asset _currentAsset;
+        private Asset currentAsset;
+        public CurrencyDetailsViewModel(object assetValue)
+        {
+            currentAsset = (Asset)assetValue;
+        }
 
         public void OnNavigatedFrom()
         {
-            throw new NotImplementedException();
         }
 
         public void OnNavigatedTo()
         {
-            throw new NotImplementedException();
+            if (!_isInitialized)
+                InitializeViewModel();
         }
         private void InitializeViewModel()
         {
