@@ -87,7 +87,7 @@ namespace CryptoWatcher.WpfUi.ViewModels
             }
         }
         // by ChatGPT
-        partial void OnCurrentLanguageChanged(String? value)
+        partial void OnCurrentLanguageChanged(String value)
         {
             var dictionary = new ResourceDictionary();
             var uri = new Uri($"pack://application:,,,/Properties/Resources.{value}.xaml");

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,9 +32,14 @@ namespace CryptoWatcher.WpfUi.ViewModels
 
         [ObservableProperty]
         private IEnumerable<Asset> assets;
+        [ObservableProperty]
+        private IEnumerable<Asset> searchResults;
 
         [ObservableProperty]
         private Asset selectedAsset;
+
+        [ObservableProperty]
+        private string? searchQuery;
 
         public CurrenciesViewModel(CryptoCurrencyService currencyService,
             INavigationService navigationService,
@@ -55,19 +61,27 @@ namespace CryptoWatcher.WpfUi.ViewModels
                 InitializeViewModel();
         }
         /// <summary>
-        /// Блястящий вин тысячилетия, я таких колёс на стаке не видел, это 
+        /// Блястящий вин тысячилетия, я таких колёс на стаке не видел
         /// </summary>
-        /// <param name="asset"></param>
         [RelayCommand]
         private void OnShowDetails(object asset)
         {
             if (asset == null)
                 return;
+
             var currencyDetailsVm = serviceProvider.GetRequiredService<CurrencyDetailsViewModel>();
             currencyDetailsVm.CurrentAsset = (Asset)asset;
-            var page = new CurrencyDetailsPage(currencyDetailsVm);
+
             var nav = (Application.Current.MainWindow as MainWindow).GetNavigation();
             nav.Navigate(typeof(CurrencyDetailsPage), asset);
+        }
+        [RelayCommand]
+        private void OnSearchQuery(string value)
+        {
+            if (value == null)
+                return;
+            value = value.ToLower();
+            SearchResults = Assets.Where(p => p.Name.ToLower() == value || p.Symbol.ToLower() == value || p.Id.ToLower() == value);
         }
 
         private async void InitializeViewModel()

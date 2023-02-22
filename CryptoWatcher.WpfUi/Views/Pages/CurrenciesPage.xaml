@@ -15,16 +15,31 @@
       Foreground="{DynamicResource TextFillColorPrimaryBrush}"
       mc:Ignorable="d">
     <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
+        <ui:AutoSuggestBox x:Name="suggestBox"
+                           Margin="0,12,0,12" 
+                           Width="400" HorizontalAlignment="Left" 
+                           MinWidth="100"
+                           Text="{Binding ViewModel.SearchQuery}"
+                           MaxLength="16"
+                           ItemsSource="{Binding ViewModel.Assets}"
+            QuerySubmitted="AutoSuggestBox_QuerySubmitted"
+            TextChanged="AutoSuggestBox_TextChanged">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="QuerySubmitted">
+                    <i:InvokeCommandAction Command="{Binding ViewModel.SearchQueryCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </ui:AutoSuggestBox>
         <ui:VirtualizingItemsControl
             Foreground="{DynamicResource TextFillColorSecondaryBrush}" 
             VirtualizingPanel.CacheLengthUnit="Item">
-                <ui:DataGrid x:Name="CurrenciesDg"
+            <ui:DataGrid x:Name="CurrenciesDg"
                          CanUserResizeRows="False"
                          AutoGenerateColumns="False"
                          IsReadOnly="True" 
                          CanUserResizeColumns="False"  CanUserReorderColumns="false"
                          Margin="0,12,0,0"
-                         Height="500"
+                         Height="500" HorizontalAlignment="Left"
                          MinWidth="475" MaxWidth="700"
                          HeadersVisibility="Column"
                          ItemsSource="{Binding ViewModel.Assets, Mode=OneWay}">
