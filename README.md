@@ -9,5 +9,5 @@
 <p>Search bar not implemented, it's part of template</p>
 <p>EN and UK languages, not working as proper, exists issue with resource cleaning, but it can be easily fixed</p>
 
-<img src="Chart.png" widht="270" height="585"/>
+<img src="ChartV2.png" widht="270" height="585"/>
 <img src="Details.png" widht="270" height="585"/>
