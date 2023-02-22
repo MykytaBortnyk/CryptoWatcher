@@ -1,5 +1,4 @@
-﻿using CryptoWatcher.Shared.Data;
-using System;
+﻿using System;
 using System.Windows;
 using System.Windows.Controls;
 using Wpf.Ui.Controls.Interfaces;
@@ -43,7 +42,7 @@ namespace CryptoWatcher.WpfUi.Views.Windows
             => RootNavigation.PageService = pageService;
 
         public void ShowWindow()
-            => Show();
+            => Show();  
 
         public void CloseWindow()
             => Close();

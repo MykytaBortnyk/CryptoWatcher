@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+    <system:String x:Key="m_About">Про програму</system:String>
+    <system:String x:Key="m_cId">Назва</system:String>
+    <system:String x:Key="m_Currencies">Валюти</system:String>
+    <system:String x:Key="m_Name">Назва</system:String>
+    <system:String x:Key="m_DarkTheme">Темна</system:String>
+    <system:String x:Key="m_Dashboard">Головна</system:String>
+    <system:String x:Key="m_Data">Дані</system:String>
+    <system:String x:Key="m_Details">Подробиці</system:String>
+    <system:String x:Key="m_LangSwitch">Мова</system:String>
+    <system:String x:Key="m_LightTheme">Світла</system:String>
+    <system:String x:Key="m_Personalisation">Персоналізація</system:String>
+    <system:String x:Key="m_Price">Ціна в USD</system:String>
+    <system:String x:Key="m_Rank">Ранг</system:String>
+    <system:String x:Key="m_Settings">Налаштування</system:String>
+    <system:String x:Key="m_Symbol">Символьне ім'я</system:String>
+    <system:String x:Key="m_Theme">Тема</system:String>
+    <system:String x:Key="m_Title">Crypto watсher</system:String>
+    <system:String x:Key="m_MaxSupply">Max Supply</system:String>
+    <system:String x:Key="m_Supply">Supply</system:String>
+    <system:String x:Key="m_Change24h">Value change avg(24h)</system:String>
+    <system:String x:Key="m_Vwap24Hr">Volume Weighted(24h)</system:String>
+    <system:String x:Key="m_MarketCap">Market Cap</system:String>
+    <system:String x:Key="m_Volume">Quantity of trading volume(24h)</system:String>
+    <system:String x:Key="m_Info">Details</system:String>
+</ResourceDictionary>
