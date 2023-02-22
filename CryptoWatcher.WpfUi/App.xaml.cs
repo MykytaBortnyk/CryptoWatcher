@@ -1,6 +1,7 @@
 ﻿using CryptoWatcher.Shared.Data;
 using CryptoWatcher.WpfUi.Models;
 using CryptoWatcher.WpfUi.Services;
+using CryptoWatcher.WpfUi.Views.Pages;
 using CryptoWatcher.WpfUi.Views.Windows;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -73,7 +74,8 @@ namespace CryptoWatcher.WpfUi
                 services.AddScoped<ViewModels.CurrenciesViewModel>();
 
                 services.AddScoped<Views.Pages.CurrencyDetailsPage>();
-                services.AddScoped<ViewModels.CurrencyDetailsViewModel>();
+                ///dont give a fuck, it's just working
+                services.AddScoped<ViewModels.CurrencyDetailsViewModel>(s => new ViewModels.CurrencyDetailsViewModel(null));
 
                 // http
                 services.AddScoped<CryptoCurrencyService>();
