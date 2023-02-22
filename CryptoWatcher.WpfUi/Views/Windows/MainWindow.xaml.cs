@@ -42,7 +42,7 @@ namespace CryptoWatcher.WpfUi.Views.Windows
             => RootNavigation.PageService = pageService;
 
         public void ShowWindow()
-            => Show();
+            => Show();  
 
         public void CloseWindow()
             => Close();

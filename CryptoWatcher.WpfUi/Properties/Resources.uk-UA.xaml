@@ -4,6 +4,7 @@
     <system:String x:Key="m_About">Про програму</system:String>
     <system:String x:Key="m_cId">Назва</system:String>
     <system:String x:Key="m_Currencies">Валюти</system:String>
+    <system:String x:Key="m_Name">Назва</system:String>
     <system:String x:Key="m_DarkTheme">Темна</system:String>
     <system:String x:Key="m_Dashboard">Головна</system:String>
     <system:String x:Key="m_Data">Дані</system:String>
