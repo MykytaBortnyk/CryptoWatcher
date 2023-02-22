@@ -1,0 +1,48 @@
+﻿<ui:UiPage x:Class="CryptoWatcher.WpfUi.Views.Pages.CurrenciesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CryptoWatcher.WpfUi.Views.Pages"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      Title="CurrenciesPage"
+      d:DataContext="{d:DesignInstance local:CurrenciesPage}"
+      d:DesignHeight="450"
+      d:DesignWidth="800"
+      d:Background="{DynamicResource ApplicationBackgroundBrush}"
+      Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+      mc:Ignorable="d">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
+            <ui:VirtualizingItemsControl
+            Foreground="{DynamicResource TextFillColorSecondaryBrush}" 
+            VirtualizingPanel.CacheLengthUnit="Item">
+                <ui:DataGrid Name="CurrenciesDg"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True" 
+                      CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False"
+                      CanUserResizeColumns="False"
+                      EnableRowVirtualization="false" EnableColumnVirtualization="false"
+                      HorizontalAlignment="Left" VerticalAlignment="Top"
+                      Margin="0,12,0,0"
+                      ColumnWidth="*"
+                      Width="Auto"
+                      MinWidth="475" MaxWidth="700"
+                      ItemsSource="{Binding ViewModel.Assets, Mode=OneWay}">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="Auto" Header="{DynamicResource m_cId}" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Width="Auto" Header="{DynamicResource m_Rank}" Binding="{Binding Rank}" />
+                        <DataGridTextColumn Width="Auto" Header="{DynamicResource m_Symbol}" Binding="{Binding Symbol}"/>
+                        <DataGridTextColumn Width="Auto" Header="{DynamicResource m_Price}" Binding="{Binding PriceUsd}"/>
+                    </DataGrid.Columns>
+                    <DataGrid.InputBindings>
+                        <MouseBinding Gesture="LeftDoubleClick"
+                                  Command="{Binding ViewModel.ShowDetailsCommand}"
+                                  CommandParameter="{Binding ElementName=CurrenciesDg, Path=SelectedItem}"/>
+                    </DataGrid.InputBindings>
+                </ui:DataGrid>
+            </ui:VirtualizingItemsControl>
+        </StackPanel>
+    </ScrollViewer>
+</ui:UiPage>

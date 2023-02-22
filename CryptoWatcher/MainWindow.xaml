@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <DataGrid Name="Currencies" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoWatcher", "CryptoWatcher\CryptoWatcher.csproj", "{F8BDA28A-281E-4713-B9E1-C9743822BF6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoWatcher", "CryptoWatcher\CryptoWatcher.csproj", "{95CFBFDF-BEE4-4B45-A107-4EA8E5D90168}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CryptoWatcher.Shared", "CryptoWatcher.Shared\CryptoWatcher.Shared.csproj", "{6159847B-6B6F-4BFA-BB6C-E3E192A60B5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CryptoWatcher.WpfUi", "CryptoWatcher.WpfUi\CryptoWatcher.WpfUi.csproj", "{0C54C0AC-4E49-4D3F-90F4-C5341444AE87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F8BDA28A-281E-4713-B9E1-C9743822BF6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8BDA28A-281E-4713-B9E1-C9743822BF6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8BDA28A-281E-4713-B9E1-C9743822BF6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8BDA28A-281E-4713-B9E1-C9743822BF6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95CFBFDF-BEE4-4B45-A107-4EA8E5D90168}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95CFBFDF-BEE4-4B45-A107-4EA8E5D90168}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95CFBFDF-BEE4-4B45-A107-4EA8E5D90168}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95CFBFDF-BEE4-4B45-A107-4EA8E5D90168}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6159847B-6B6F-4BFA-BB6C-E3E192A60B5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6159847B-6B6F-4BFA-BB6C-E3E192A60B5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6159847B-6B6F-4BFA-BB6C-E3E192A60B5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6159847B-6B6F-4BFA-BB6C-E3E192A60B5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C54C0AC-4E49-4D3F-90F4-C5341444AE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C54C0AC-4E49-4D3F-90F4-C5341444AE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C54C0AC-4E49-4D3F-90F4-C5341444AE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C54C0AC-4E49-4D3F-90F4-C5341444AE87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,64 @@
+﻿<ui:UiPage
+    x:Class="CryptoWatcher.WpfUi.Views.Pages.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:helpers="clr-namespace:CryptoWatcher.WpfUi.Helpers"
+    xmlns:local="clr-namespace:CryptoWatcher.WpfUi.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    Title="SettingsPage"
+    d:DataContext="{d:DesignInstance local:SettingsPage,
+                                     IsDesignTimeCreatable=False}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    d:Background="{DynamicResource ApplicationBackgroundBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d">
+    <ui:UiPage.Resources>
+        <helpers:EnumToBooleanConverter x:Key="EnumToBooleanConverter" />
+    </ui:UiPage.Resources>
+
+    <StackPanel>
+        <TextBlock
+            FontSize="20"
+            FontWeight="Medium"
+            Text="{DynamicResource m_Personalisation}" />
+        <TextBlock Margin="0,12,0,0" Text="{DynamicResource m_Theme}" />
+        <RadioButton
+            Margin="0,12,0,0"
+            Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
+            CommandParameter="theme_light"
+            Content="{DynamicResource m_LightTheme}"
+            GroupName="themeSelect"
+            IsChecked="{Binding ViewModel.CurrentTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Light, Mode=OneWay}" />
+        <RadioButton
+            Margin="0,8,0,0"
+            Command="{Binding ViewModel.ChangeThemeCommand, Mode=OneWay}"
+            CommandParameter="theme_dark"
+            Content="{DynamicResource m_DarkTheme}"
+            GroupName="themeSelect"
+            IsChecked="{Binding ViewModel.CurrentTheme, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter=Dark, Mode=OneWay}" />
+        <TextBlock Margin="0,12,0,0" Text="{DynamicResource m_LangSwitch}" />
+        <ComboBox x:Name="LanguageComboBox"
+                  Margin="0,8,0,0"
+                  IsEditable="False" 
+                  Width="Auto"
+                  HorizontalAlignment="Left"
+                  SelectedItem="{Binding ViewModel.CurrentLanguage, Mode=TwoWay}"
+                  Text="{Binding ViewModel.CurrentLanguage, Mode=TwoWay}"
+                  ItemsSource="{Binding ViewModel.SupportedLanguages}">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding NativeName}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock
+            Margin="0,24,0,0"
+            FontSize="20"
+            FontWeight="Medium"
+            Text="{DynamicResource m_About}" />
+        <TextBlock Margin="0,12,0,0" Text="{Binding ViewModel.AppVersion, Mode=OneWay}" />
+    </StackPanel>
+</ui:UiPage>
