@@ -1,6 +1,11 @@
-﻿using System;
+﻿using CryptoWatcher.WpfUi.ViewModels;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Markup;
 using Wpf.Ui.Controls.Interfaces;
 using Wpf.Ui.Mvvm.Contracts;
 
@@ -25,6 +30,8 @@ namespace CryptoWatcher.WpfUi.Views.Windows
             SetPageService(pageService);
 
             navigationService.SetNavigationControl(RootNavigation);
+
+            SettingsViewModel.CurrentCultureChanged += OnCultureChanged;
         }
 
         #region INavigationWindow methods
@@ -58,6 +65,16 @@ namespace CryptoWatcher.WpfUi.Views.Windows
 
             // Make sure that closing this window will begin the process of closing the application.
             Application.Current.Shutdown();
+        }
+        //by ChatGPR
+        private void OnCultureChanged(string value)
+        {
+            CultureInfo.CurrentCulture = CultureInfo.GetCultureInfo(value);
+            CultureInfo.CurrentUICulture = CultureInfo.GetCultureInfo(value);
+            var xmlLanguage = XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.Name);
+            RootNavigation.Language = xmlLanguage;
+            RootMainGrid.Language = xmlLanguage;
+            RootNavigation.Language = xmlLanguage;
         }
     }
 }

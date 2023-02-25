@@ -74,7 +74,7 @@ namespace CryptoWatcher.WpfUi
                 services.AddScoped<ViewModels.CurrenciesViewModel>();
 
                 services.AddScoped<Views.Pages.CurrencyDetailsPage>();
-                ///dont give a fuck, it's just working
+
                 services.AddScoped<ViewModels.CurrencyDetailsViewModel>(s => new ViewModels.CurrencyDetailsViewModel(null));
 
                 // http

@@ -31,8 +31,8 @@ namespace CryptoWatcher.WpfUi.Views.Pages
 
         private void AutoSuggestBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {
-            var items = CurrenciesDg.ItemsSource.Cast<Asset>().ToList();
-            suggestBox. = items.Where(i => i.Id.ToLower() == (sender as AutoSuggestBox).Text);
+            //var items = CurrenciesDg.ItemsSource.Cast<Asset>().ToList();
+            //suggestBox.ItemsSource = items.Where(i => i.Id.ToLower() == (sender as AutoSuggestBox).Text);
         }
     }
 }
